@@ -1,0 +1,8 @@
+ALTER TABLE `mos_zoomfiles`
+	ADD `votenum` INT( 11 ) DEFAULT '0' NOT NULL AFTER `hits` ,
+	ADD `votesum` INT( 11 ) DEFAULT '0' NOT NULL AFTER `votenum` ;
+	
+ALTER TABLE `mos_zoom`
+	ADD `catimg` INT( 4 ) NULL AFTER `catdir` ,
+	ADD `subcat_id` INT( 4 ) DEFAULT '0' NOT NULL AFTER `catimg` ,
+	ADD `pos` INT( 3 ) DEFAULT '0' NOT NULL AFTER `subcat_id` ;

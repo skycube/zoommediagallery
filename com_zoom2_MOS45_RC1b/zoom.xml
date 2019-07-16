@@ -1,0 +1,198 @@
+<?xml version="1.0" ?>
+<mosinstall type="component">
+  <name>zoom</name>
+  <creationDate>20/01/2004</creationDate>
+  <author>Mike de Boer</author>
+  <copyright>This component is released under the GNU/GPL License</copyright>
+  <authorEmail>mailme@mikedeboer.nl</authorEmail>
+  <authorUrl>www.mikedeboer.nl</authorUrl>
+  <version>2.0</version>
+  <description>zOOm Image Gallery is a full-featured multi-gallery component for Mambo</description>
+  <files>
+    <filename>zoom.php</filename>
+    <filename>galleryshow.php</filename>
+    <filename>view.php</filename>
+    <filename>view_embed.php</filename>
+    <filename>special.php</filename>
+    <filename>delpic.php</filename>
+    <filename>editpic.php</filename>
+    <filename>save_dnd.php</filename>
+    <filename>javascripts.js</filename>
+    <filename>zoom.css</filename>
+    <filename>classes/fs_win32.php</filename>
+    <filename>classes/fs_unix.php</filename>
+    <filename>classes/zoom.class.php</filename>
+    <filename>admin/admin.php</filename>
+    <filename>admin/delete.php</filename>
+    <filename>admin/edit.php</filename>
+    <filename>admin/editbody.php</filename>
+    <filename>admin/JUpload.jar</filename>
+    <filename>admin/new.php</filename>
+    <filename>admin/save_photos.php</filename>
+    <filename>admin/settings.php</filename>
+    <filename>admin/upl_dragndrop.php</filename>
+    <filename>admin/upl_multiple.php</filename>
+    <filename>admin/upl_single.php</filename>
+    <filename>admin/upload.php</filename>
+    <filename>admin/user.php</filename>
+    <filename>language/english.php</filename>
+    <filename>language/dutch.php</filename>
+   </files>
+  <images>
+    <filename>images/back.gif</filename>
+    <filename>images/comment.gif</filename>
+    <filename>images/delete.gif</filename>
+    <filename>images/edit.gif</filename>
+    <filename>images/folder.gif</filename>
+    <filename>images/home.gif</filename>
+    <filename>images/next.gif</filename>
+    <filename>images/noimg.gif</filename>
+    <filename>images/play.gif</filename>
+    <filename>images/stop.gif</filename>
+    <filename>images/zoom_dragndrop.gif</filename>
+    <filename>images/zoom_logo.gif</filename>
+    <filename>images/zoom_logo_faded.gif</filename>
+    <filename>images/zoom_logo_small.gif</filename>
+    <filename>images/zoom_minus.gif</filename>
+    <filename>images/zoom_plus.gif</filename>
+    <filename>images/rating/rating0.gif</filename>
+    <filename>images/rating/rating1.gif</filename>
+    <filename>images/rating/rating2.gif</filename>
+    <filename>images/rating/rating3.gif</filename>
+    <filename>images/rating/rating4.gif</filename>
+    <filename>images/rating/rating5.gif</filename>
+    <filename>images/smilies/icon_arrow.gif</filename>
+    <filename>images/smilies/icon_biggrin.gif</filename>
+    <filename>images/smilies/icon_confused.gif</filename>
+    <filename>images/smilies/icon_cool.gif</filename>
+    <filename>images/smilies/icon_cry.gif</filename>
+    <filename>images/smilies/icon_eek.gif</filename>
+    <filename>images/smilies/icon_evil.gif</filename>
+    <filename>images/smilies/icon_exclaim.gif</filename>
+    <filename>images/smilies/icon_frown.gif</filename>
+    <filename>images/smilies/icon_idea.gif</filename>
+    <filename>images/smilies/icon_lol.gif</filename>
+    <filename>images/smilies/icon_mad.gif</filename>
+    <filename>images/smilies/icon_mrgreen.gif</filename>
+    <filename>images/smilies/icon_neutral.gif</filename>
+    <filename>images/smilies/icon_question.gif</filename>
+    <filename>images/smilies/icon_razz.gif</filename>
+    <filename>images/smilies/icon_redface.gif</filename>
+    <filename>images/smilies/icon_rolleyes.gif</filename>
+    <filename>images/smilies/icon_sad.gif</filename>
+    <filename>images/smilies/icon_smile.gif</filename>
+    <filename>images/smilies/icon_surprised.gif</filename>
+    <filename>images/smilies/icon_twisted.gif</filename>
+    <filename>images/smilies/icon_wink.gif</filename>
+     </images>
+  <install>
+    <queries>
+      <query>DROP TABLE IF EXISTS #__zoom</query>
+      <query>
+      CREATE TABLE #__zoom (
+	  id int(4) unsigned NOT NULL auto_increment,
+	  catname varchar(25) default '0',
+	  catdescr varchar(180) default NULL,
+	  catdir varchar(25) default '0',
+	  catimg int(4) default NULL,
+	  subcat_id int(4) NOT NULL default '0',
+	  pos int(3) NOT NULL default '0',
+	  PRIMARY KEY  (id),
+	  KEY id (id)
+	) TYPE=MyISAM
+      </query>
+      <query>DROP TABLE IF EXISTS #__zoomfiles</query>
+      <query>
+      CREATE TABLE #__zoomfiles (
+	  id int(4) unsigned NOT NULL auto_increment,
+	  filename varchar(30) NOT NULL default '',
+	  descr varchar(180) default NULL,
+	  hits bigint(20) NOT NULL default '0',
+	  votenum int(11) NOT NULL default '0',
+	  votesum int(11) NOT NULL default '0',
+	  gallery_id int(4) unsigned NOT NULL default '0',
+	  PRIMARY KEY  (id),
+	  KEY id (id)
+	) TYPE=MyISAM
+      </query>
+      <query>DROP TABLE IF EXISTS #__zoom_comments</query>
+      <query>
+      CREATE TABLE #__zoom_comments (
+	  id int(4) NOT NULL auto_increment,
+	  image_id int(4) NOT NULL default '0',
+	  name varchar(40) NOT NULL default '',
+	  comment varchar(180) NOT NULL default '',
+	  date timestamp(14) NOT NULL,
+	  PRIMARY KEY  (id),
+	  KEY ID (id),
+	  KEY image_id (image_id)
+	) TYPE=MyISAM
+      </query>
+      <query>DROP TABLE IF EXISTS #__zoom_config</query>
+      <query>
+      CREATE TABLE #__zoom_config (
+	  conversiontype tinyint(1) NOT NULL default '1',
+	  imagepath varchar(60) NOT NULL default 'images/zoom/',
+	  IM_path varchar(60) NOT NULL default 'd:/ImageMagick/',
+	  NETPBM_path varchar(60) NOT NULL default 'c:/NETPBM/',
+	  size smallint(3) NOT NULL default '100',
+	  JPEGquality smallint(3) NOT NULL default '85',
+	  columnsno smallint(2) NOT NULL default '3',
+	  PageSize smallint(6) NOT NULL default '6',
+	  tempDescr varchar(240) NOT NULL default 'Temporary description, please change...',
+	  commentsOn tinyint(1) NOT NULL default '1',
+	  ratingOn tinyint(1) NOT NULL default '1',
+	  popUpImages tinyint(1) NOT NULL default '0',
+	  catImg tinyint(1) NOT NULL default '1',
+	  slideshow tinyint(1) NOT NULL default '1',
+	  readEXIF tinyint(1) NOT NULL default '0',
+	  displaylogo tinyint(1) NOT NULL default '1',
+	  allowUserUpload tinyint(1) NOT NULL default '1',
+	  version varchar(12) NOT NULL default '2.0',
+	  PRIMARY KEY  (conversiontype)
+	) TYPE=MyISAM
+      </query>
+      <query>
+      DROP TABLE IF EXISTS #__zoom_editmon</query>
+      <query>
+      CREATE TABLE #__zoom_editmon (
+	  id int(11) NOT NULL auto_increment,
+	  user_session varchar(200) NOT NULL default '0',
+	  vote_time varchar(14) default NULL,
+	  comment_time varchar(14) default NULL,
+	  image_id int(4) NOT NULL default '0',
+	  PRIMARY KEY  (id)
+	) TYPE=MyISAM
+      </query>
+      <query>
+      INSERT INTO `#__zoom_config` (
+      	`conversiontype` , `imagepath` , `IM_path` , `NETPBM_path` , `size` , `JPEGquality` ,
+      	`columnsno` , `PageSize` , `tempDescr` , `commentsOn` , `ratingOn`, `popUpImages` , `catImg` ,
+      	`slideshow` , `readEXIF` , `displaylogo` , `allowUserUpload` , `version`
+      	) VALUES (
+      	'1', 'images/zoom/', 'd:/ImageMagick/', 'c:/NETPBM/', '100', '85',
+      	'3', '6', 'Temporary description, please change...', '1', '1', '0', '1',
+      	'1', '0', '1', '1', '2.0')
+      </query>
+    </queries>
+  </install>
+  <uninstall>
+      <queries>
+      <query>DELETE FROM #__zoom</query>
+      <query>DROP TABLE #__zoom</query>
+      <query>DELETE FROM #__zoomfiles</query>
+      <query>DROP TABLE #__zoomfiles</query>
+      <query>DELETE FROM #__zoom_comments</query>
+      <query>DROP TABLE #__zoom_comments</query>
+      <query>DELETE FROM #__zoom_config</query>
+      <query>DROP TABLE #__zoom_config</query>
+      <query>DELETE FROM #__zoom_editmon</query>
+      <query>DROP TABLE #__zoom_editmon</query>
+      </queries>
+  </uninstall>
+    <installfile>install.zoom.php</installfile>
+    <uninstallfile>uninstall.zoom.php</uninstallfile>
+<administration>
+		<menu>zOOm Image Gallery</menu>
+</administration>
+</mosinstall>

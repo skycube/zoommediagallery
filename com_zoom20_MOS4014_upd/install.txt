@@ -1,0 +1,146 @@
+-----------------------------------------------------------------------
+|  zOOm Image Gallery! by Mike de Boer - a multi-gallery component    |
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+|                                                                     |
+| Date: January, 2004                                                 |
+| Author: Mike de Boer, <http://www.mikedeboer.nl>                    |
+| Copyright: copyright (C) 2004 by Mike de Boer                       |
+| Description: zOOm Image Gallery, a multi-gallery component          |
+|              It's the most feature-rich gallery component for       |
+|              Mambo!                                                 |
+| Version: 2.0                                                        |
+|                                                                     |
+-----------------------------------------------------------------------
+
+-------
+CONTENT
+-------
+1 -> FEATURES
+2 -> REQUIREMENTS
+3 -> INSTALLATION INSTRUCTIONS
+4 -> UPDATE INSTRUCTIONS
+5 -> USING ZOOM
+6 -> BUGFIXES
+7 -> TODO LIST
+8 -> NOTES
+9 -> ACKNOWLEDGEMENTS
+
+-----------
+1. FEATURES
+-----------
+* Multigallery component
+* Complete admin plus easy to use admin interface 
+* Automatic thumbnail generation (GD2, IMAGEMAGICK and NETPBM)
+* Language pack support
+* Pagination
+* Comment feature - let users comment your pictures!
+* Slideshow: gallery pictures fading in and out in front of you
+* Multiple file-upload (up to 10 pictures at once)
+* Display picture details in two ways: in a popup or within the Mambo-screen
+* Easy mediaplayer-like navigation (eg. rewind, play, stop, ffwd)
+* Upload multiple files in multiple ways; drag 'n drop supported!
+* Easy installation in three steps - no manual database update necessary.
+
+---------------
+2. REQUIREMENTS
+---------------
+* Mambo v4.0.14
+* IMAGEMAGICK or NETPBM installed or PHP compiled with GD2
+* Java 1.3.x for drag 'n drop file-upload feature
+
+----------------------------
+3. INSTALLATION INSTRUCTIONS
+----------------------------
+1. COPY FILES
+      Unzip all files into mambo root, leaving directory structure intact.
+      CHMOD images/zoom to 777 (Unix)
+      CHMOD components/com_zoom to 755 (Unix)
+2. PUBLISH
+      publish zOOm, by selecting Main Menu --> Install Custom.
+      Then select zOOm Image Gallery. Publish zOOm 2.0 by
+      selecting Main Menu --> Top Section --> Add
+3. CONFIGURE zOOm
+      Open your browser and load the Mambo front-end. Login
+      as admin and select zOOm from your menu.
+      Next, the installation screen appears: click YES and all
+      the necessary tables and configuration are entered into
+      the database. Change settings later in the Admin-system.
+
+----------------------
+4. UPDATE INSTRUCTIONS
+----------------------
+1. COPY NEWER FILES
+	First, delete the old directory 'com_zoom' from the the 'components'
+	directory. Then, unzip all newer files into the mambo-root, leaving
+	directory structure intact.
+2. UPDATE ZOOM TABLES
+	Update your database by executing the file 'zoom20_UPDATEfrom1.0.sql'
+	from phpMyAdmin or command line prompt.
+3. FINISH THE JOB
+	Create an empty file, called 'install.lock' in the directory 'components/
+	com_zoom/', which will override the installation procedure.
+	Then, login as Admin at the Mambo frontend and click the 'Admin-system'-
+	link. Change your zOOm settings there.
+
+-------------
+5. USING ZOOM
+-------------
+- login on the frontpage, using your adminpassword
+- Select zOOm and click on the Admin-system link; the adminoptions appear. You can
+	* Create new galleries
+	* Delete galleries
+	* Edit gallerynames and descriptions
+	* Upload files through the admin-menu
+	* Change ALL of zOOm's variable settings AND
+  you can also
+	* Modify file-descriptions
+	* Delete files
+	* Add/ delete comments instantly through the frontpage!
+	
+------------
+6. TODO LIST
+------------
+- Not much, really. :-D BUT, bugs are inevitable, because of the
+      number of foreign technologies used (Java, ImageMagick,
+      NetPBM, etc.) and different filesystems (Windows and Unix).
+      Please mail them to the author or post a request on the
+      Mambo-forum.
+- maybe the implementation of the jHead EXIF-reader...it worked out fine
+	for PHPGallery!
+- adding bbCode support, and other graphical optionalities. However, I don't
+	want to make zOOm into some kind of forum-software (The smilies code
+	I have already derived from phpBB).
+- eCards.
+- if you know a nice feature you're missing, please mail me at: mailme@mikedeboer.nl
+
+-----------
+7. BUGFIXES
+-----------
+- colour problems with GD2 conversion library.
+      I rewrote the GD-code and is currently tested by users.
+
+--------
+8. NOTES
+--------
+- This release took up a lot of time and effort, but I enjoyed it very much...I
+	always tend to say programming is like making a somewhat complex puzzle.
+	Well, before I offend people any further, I was to ask you all, users, this
+	question: Do you have some server space available? It doesn't have to be
+	much, just so that I can setup something like a support-system and base for
+	future projects...HELP!
+- If possible, with PHP & MySQL support...;-)
+
+-------------------
+9. ACKNOWLEDGEMENTS
+-------------------
+- To finish it off, I want to mention some programmers who contributed, mostly without their
+	knowledge, to zOOm Image Gallery 2.0:
+	Grégory DEMAR, from Coppermine Gallery @ http://www.chezgreg.net/coppermine/
+	The PHPGallery team @ www.menalto.com
+	Ronald Smit from RSGallery @ rsgallery.sourceforge.net
+	Arthur Konze from akoGallery @ www.mamboportal.com
+	WHITEANGLE from WhiteAlbum @ www.whiteangle.com
+	And Theo for his continuous feedback and testing on GD2, he seems as eager at
+	a good gallery component for Mambo as I :-P

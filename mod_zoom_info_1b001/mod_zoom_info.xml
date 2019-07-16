@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="module" version="1.0.0">
+  <name>mod_zoom_info</name>
+  <author>Per Lasse Baasch</author>
+  <creationDate>2006|01|xx</creationDate>
+  <copyright>(C) 2006 skycube.net</copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <authorEmail>www.skycube.net</authorEmail>
+  <authorUrl>www.skycube.net</authorUrl>
+  <version>2b233</version>
+  <description>mod_zoom_info is a official module for joomla! Open Source with the component zOOm media gallery. 
+			  Requirements: com_zoom_2.5rc1. Download at www.zoomfactory.org and www.skycube.net - 
+			  demo at www.bsekrank.de - Have fun</description>
+  <files>
+    <filename module="mod_zoom_info">mod_zoom_info.php</filename>
+  </files>
+  <params>
+    <param name="moduleclass_sfx" type="text" default=""
+           label="Module Class Suffix"
+           description="A suffix to be applied to the css class of the module
+                       (table.moduletable), this allows individual module styling" />
+ 
+ <param name="ZMI_intro" type="list" default="1" label="Show count of media">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+ <param name="ZMI_intromessage" type="text" size="50" default="Statics about the mediagallery (All media, published, protected, unpublished)" label="Intro message"/>
+
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+    
+	<param name="ZMI_mediacount" type="list" default="1" label="Show count of media">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+	<param name="ZMI_catscount" type="list" default="1" label="Show count of cats">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+	<param name="ZMI_commentscount" type="list" default="1" label="Show count of comments">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+	<param name="ZMI_hitscount" type="list" default="1" label="Show count of hits">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+	<param name="ZMI_votescount" type="list" default="1" label="Show count of votes">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+    
+ <param name="ZMIlayout_newline" type="list" default="0" label="Newline for the information">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+	<param name="ZMIlayout_spacer" type="list" default="1" label="Spacerline after the information">
+			<option value="0">no</option>
+			<option value="1">yes</option>
+	</param>
+	<param name="ZMIlayout_align" type="list" default="1" label="Align the content">
+			<option value="0">Don't align</option>
+			<option value="left">left</option>
+			<option value="right">right</option>
+			<option value="center">center</option>
+	</param>
+    
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+		
+	<param name="ZMILang_mediacount" type="text" size="20" default="Count of media:" label="Lang mediacount"/> 
+	<param name="ZMILang_catscount" type="text" size="20" default="Count of cats:" label="Lang catscount"/> 
+	<param name="ZMILang_commentscount" type="text" size="20" default="Count of comments:" label="Lang commentscount"/> 
+	<param name="ZMILang_hitscount" type="text" size="20" default="Count of hits:" label="Lang hitscount"/>
+	<param name="ZMILang_votescount" type="text" size="20" default="Count of votes:" label="Lang votescount"/> 
+
+  </params>
+</mosinstall>

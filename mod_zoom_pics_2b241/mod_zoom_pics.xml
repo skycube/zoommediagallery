@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="module" version="1.0.0">
+  <name>mod_zoom_pics</name>
+  <author>Per Lasse Baasch</author>
+  <creationDate>2006|08|08</creationDate>
+  <copyright>(C) 2006 skycube.net</copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <authorEmail>www.skycube.net</authorEmail>
+  <authorUrl>www.skycube.net</authorUrl>
+  <version>2b241</version>
+  <description>mod_zoom_pics is a official module for joomla! Open Source with the component zOOm media gallery. Not some styles with div may not work on
+			   every template. If it is so, please debug and notify me. Furthermore the scroller may not work in older browsers.
+			  Requirements: com_zoom_2.5rc1 or higher. Download at www.zoomfactory.org and www.skycube.net -
+			  demo at www.bsekrank.de - Have fun</description>
+  <files>
+    <filename module="mod_zoom_pics">mod_zoom_pics.php</filename>
+  </files>
+  <params>
+    <param name="moduleclass_sfx" type="text" default=""
+           label="Module Class Suffix"
+           description="A suffix to be applied to the css class of the module
+                       (table.moduletable), this allows individual module styling" />
+ 
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+    <param name="ZMmethod" type="list" default="2" label="Image selection by" description="Which pictures should be displayed">
+			<option value="1">randommode(random,new,hits,votes)</option>
+			<option value="2">random</option>
+			<option value="3">new</option>
+			<option value="4">hits</option>
+			<option value="5">votes</option>
+	</param>
+	<param name="ZMonlythiscat" type="text" size="20" default="0" label="Only this Cathegorie NOT RECURSIVE" description="Default is 0"/>
+	<param name="ZMnumerofpics" type="text" size="20" default="5" label="How many images" description="How many images should be displayed">
+	</param>
+	<param name="ZMshowmeth" type="list" default="0" label="Show method" description="Show the type of selection method for the picture">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowcat" type="list" default="1" label="Show cat" description="Show the name of the cat">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowcatlinked" type="list" default="1" label="Link the cat" description="Linke the name of the cat directly to com_zOOm">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowhits" type="list" default="0" label="Show hits" description="Show the hits on the current image">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowvotes" type="list" default="0" label="Show votes" description="Show the votes for the current image">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowfilename" type="list" default="1" label="Show filename" description="Show the filename for the current image">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowname" type="list" default="1" label="Show name" description="Show the name for the current image">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMshowdesc" type="list" default="0" label="Show description" description="Show the description for the current image">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMimglinking" type="list" default="0" label="Linked image properties" description="Does the image should be linked, and to where">
+			<option value="0">not linked</option>
+			<option value="1">linked to image</option>
+			<option value="2">linked to cat</option>
+	</param>
+	<param name="ZMviemode" type="list" default="0" label="View method" description="How the images should be displayed">
+			<option value="0">Inside of com_zOOm (config of com_zOOm)</option>
+			<option value="1">Outside of com_zOOm (in a PoP-UP)</option>
+	</param>
+	<param name="ZMitemidpic" type="list" default="0" label="Itemid settings" description="Which Itemid of Joomla! should be used">
+			<option value="0">com_zOOm</option>
+			<option value="1">current page</option>
+	</param>
+	
+	<param name="@spacer" type="spacer" default="" label="" description=""/> 
+	
+	<param name="ZMstyleallign" type="list" default="3" label="Style allign" description="Would you like that everthing is alligned?">
+			<option value="not">Don't allign!</option>
+			<option value="left">left</option>
+			<option value="right">right</option>
+			<option value="center">center</option>			
+	</param>
+	<param name="ZMstylespacer" type="list" default="0" label="Style Spacer" description="Add a spacer between images if you want to display more than one? NOTE: these can be overtaken by YOUR site-template!">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMstylespacersize" type="list" default="0" label="Style Spacer-size" description="Set the high of the spacer. NOTE: these can be overtaken by YOUR site-template!">
+			<option value="0">0px</option>
+			<option value="2">2px</option>
+			<option value="5">5px</option>
+			<option value="10">10px</option>
+			<option value="15">15px</option>
+			<option value="20">20px</option>
+			<option value="25">25px</option>
+			<option value="30">30px</option>
+			<option value="35">35px</option>
+			<option value="40">40px</option>
+			<option value="45">45px</option>
+			<option value="50">50px</option>
+	</param>
+	<param name="ZMstyleresizeimage" type="list" default="0" label="Style Resize Images" description="Resize the thumbnail for better template viewing?">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMstyleresizeimagewidth" type="text" size="20" default="150" label="Style resize to width" description="To which width should the images be resized."/> 
+	<param name="ZMmulti_direction" type="list" default="vertical" label="Multi-Picture Direction" description="Select module form-factor, if selected more than 1 picture. Vertical or Horizontal.">
+			<option value="vertical">Vertical</option>
+			<option value="horizontal">Horizontal</option>
+	</param>
+	
+	<param name="@spacer" type="spacer" default="" label="" description=""/> 
+	
+	<param name="ZMstylescroller" type="list" default="0" label="Use MARQUEE Scroller" description="Note, may some older Browser can't animate these">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+	</param>
+	<param name="ZMstylescrollerDirection" type="list" default="up" label="Scroller Direction" description="To which side should it scroll">
+			<option value="up">up</option>
+			<option value="down">down</option>
+			<option value="left">left</option>
+			<option value="right">right</option>
+	</param>
+	<param name="ZMstylescrollerW" type="text" size="20" default="150" label="Scroller width" description="Scroller Width"/> 
+	<param name="ZMstylescrollerH" type="text" size="20" default="200" label="Scroller height" description="Scroller height"/> 
+	<param name="ZMstylescrollerSpeed" type="list" default="1" label="Scroller speed" description="Whith which speed should it scroll">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+			<option value="75">75</option>
+			<option value="100">100</option>
+	</param>
+	<param name="ZMstylescrollerDelay" type="list" default="10" label="Scroller delay" description="How long should the scroller wait">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+			<option value="75">75</option>
+			<option value="100">100</option>
+	</param>
+	
+	<param name="@spacer" type="spacer" default="" label="" description=""/> 
+	  
+    <param name="ZMLang_random" type="text" size="20" default="random" label="Language random" description="Your language translation for random"/> 
+	<param name="ZMLang_newest" type="text" size="20" default="newest" label="Language newest" description="Your language translation for newest"/> 	
+    <param name="ZMLang_hits" type="text" size="20" default="hits" label="Language hits" description="Your language translation for hits"/> 
+    <param name="ZMLang_votes" type="text" size="20" default="votes" label="Language votes" description="Your language translation for votes"/> 
+ 
+	  
+  </params>
+</mosinstall>

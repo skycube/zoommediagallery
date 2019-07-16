@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall version="1.0.0" type="mambot" group="content">
+	<name>zOOmCat</name>
+	<author>Thaddaeus Dahlberg</author>
+	<creationDate>March 2006</creationDate>
+	<copyright>(C) 2006 Valley Hill Design (GNU).</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>thad@valleyhilldesign.com</authorEmail>
+	<authorUrl>http://joomla.valleyhill.net</authorUrl>
+	<version>1 RC2</version>
+	<description>
+	<![CDATA[ 
+	<script type="text/javascript" language="JavaScript"> 
+	function cleanupcss() { 
+	var formattedcss = '\n#ZoomCat {\n\tposition: relative;\n\twidth: 100%;\n\ttext-align: center;\n\tfloat: left;\n\tpadding: 10px;\n }\n #ZoomCat h2 {\n \tfont-size: 18px;\n \tline-height: 19px;\n \tmargin: 0px;\n \tpadding: 0px;\n \ttext-align: center;\n \tcolor: #006699;\n }\n p.ZMCatSize {\n \ttext-align: center;\n \tmargin: 0px;\n }\n p.ZMCatDesc {\n \ttext-align: center;\n\tfont-size: 13px;\n \tline-height: 14px;\n \tmargin-top: 2px;\n \tmargin-bottom: 7px;\n }\n .ZMThumbRow {\n\ttext-align: center;\n\tposition: relative;\n\twidth: 100%;\n\tpadding: 0px 0px 10px;\n\tmargin: auto;\n\tfloat: left;\n }\n .ZMThumb {\n\tfloat: left;\n\twidth: 30%;\n\ttext-align: center;\n\tpadding: 1px 5px 1px 1px;\n }\n .ZMThumbLast {\n \tmargin-right: 0px !important;\n }\n .ZMThumb img {\n \tborder: 1px solid #666666;\n }\n .ZMThumb a {\n \ttext-decoration: none;\n \tcolor: #333333;\n }\n .ZMThumb a:hover {\n \tcolor: #990000;\n }\n .ZMThumb p.ZMImgCaption {\n \twidth: 100%;\n \tmargin-top: 2px;\n \tmargin-bottom: 5px;\n }\n .ZMThumb p.ZMImgHits {\n \tfont-size: 11px;\n \tline-height: 12px;\n \tmargin: 0px;\n }\n .ZMThumb img a:hover {\n \tborder-top-color: #990000;\n \tborder-right-color: #990000;\n \tborder-bottom-color: #990000;\n \tborder-left-color: #990000;\n }\n'; 
+	document.getElementsByName('params[zoomcatstyles]')[0].value=formattedcss; 
+	} 
+	</script> 
+<style type="text/css"> <!-- .ZMCatDesc { font-weight: normal;
+float: left; position: relative; width: 100%; } .ZMCatDesc h1, .ZMCatDesc h2, .ZMCatDesc h3, .ZMCatDesc h4 { color: #006699; margin: 0px !important; padding: 0px !important; } #ZoomCat {
+position: relative; width: 98%; text-align: center; background-color: #BAD5D2; font-size: 13px; line-height: 14px; padding: 1%; float: left; display: block; } #ZoomCat h2 { padding: 3px;
+background-color: #D0F2EF; font-size: 13px; line-height: 14px; display: block; position: relative; } p.ZMCatSize { padding: 1%; background-color: #DAFFFD; display: block; position: relative; }
+p.ZMCatDesc { padding: 1%; background-color: #E5FFFF; display: block; position: relative; width: 98%; } .ZMThumbRow { background-color: #F5FFFA; position: relative; width: 98%; float: left;
+display: block; padding: 1%; } .ZMThumb { float: left; width: 29%; padding: 1%; position: relative; background-color: #EFEFD7; display: block; margin: 1%; } .style1 {position: relative; width:
+100%; float: left;} --> </style> </head> <body> <span class="ZMCatDesc"> <h1>ZoomCat <em>plugin</em> (Version 1RC3)</h1> <p>Developed by Thaddaeus Dahlberg. (C) 2006 <a
+href="http://www.valleyhilldesign.com" >Valley Hill Design, LLC</a>. License <a href="http://www.gnu.org/copyleft/gpl.html GNU/GPL">GNU/GPL</a>. Special thanks for inspiration and code to Mike
+de Boer who wrote <a href="http://www.zoomfactory.org/">Zoom Media Gallery</a>, Per Lasse Baasch who wrote <a href="http://www.skycube.net/">mod_zoom_pics</a>, and Jetze van der Wal who wrote
+the original moszoomthumb that got me started.</p> <p>This plugin (mambot) works in concert with <a href="http://www.zoomfactory.org/">Zoom Media Gallery (ZMG) </a> . It creats a gallery,
+referenced by the category ID that ZMG gives it, inside Joomla content rather than inside the ZMG Component. The Gallery created is tableless and based on CSS that can be modified from the
+plugin parameter panel or via your own template files CSS.</p> <h2>Usage</h2> <p>Remeber that with computer code syntax is everything. Spaces and equal signs are very important! Mambots can be
+very particular to added text-decoration HTML code that may easily be added, but not appear to have been added, when using an WYSIWYG editor. Make sure that the mambot uses plain text without
+any HTML tags in it. </p> <p>The simplest way to use the zOOmCat mambot is to enter the following code into any Joomla content item:</p> {zoomcat catid=NN} <p><strong>NN</strong> = This is a
+number that ZMG uses to identify a gallery and is called a category id (catid). You can find the catid for a gallery by logging into the administrator backside of your site, selecting
+components-&gt;zOOm Media Gallery, clicking on Gallery Manager, and hovering over your gallery tree (The ID number displayed is your catid number). Alternately, if you do not have any sort of
+advanced SEF running and ZMG is accessible through a front side menu, you can find the catid by looking in your URL when you navigate to the gallery. Just look for &quot;catid&quot; followed by
+a number in your url (example URL: http://joomla.valleyhill.net/index.php?option=com_zoom&amp;Itemid=7&amp;catid=1 this URL is pointing to catid 1)</p> <h2>Andvanced Usage (optional paramters)
+</h2> <p>There are additional parameters you can add to your zOOmCat mambot tag. These parameters are optional and must always be paired with the catid parameter above. These parameters can be
+used together or seperately and do not depend one another.</p> </span> <p class="ZMCatDesc">{zoomcat &nbsp; catid=NN &nbsp; csssuffix=CSSsuffix &nbsp; range=NSTART-NEND } </p> <span
+class="ZMCatDesc"></span><span class="ZMCatDesc"> <p><strong>CSSsuffix </strong>= This paramerter enables you to define a suffix that will be appended to the end of the div tag that surrounds
+the whole gallery that this zOOmCat tag creates. Adding this suffix would allow you to make custom modifications to individual galleries through CSS creating a different look for each gallery
+that contains the added suffix. You can create any suffix name you want as long as it is comprised of letters and numbers. Do not put quotes around your suffix. This parameter is optional. If
+this parameter is used it must be complete (pass a parameter after the = sign). </p> <p><strong>range = </strong>The range paramerter alows you to designate which thumbnails in a gallery
+(category) that you want to display. If you have 20 thumbnails in your gallery (example catid=2) you may want to only display thumbnails 3-10 (in the order you designated in ZMG). If this were
+true you could enter the range parameter like this: {zoomcat catid=2 range=2-10} . Remeber to use the equal sign after the range parameter and to seperate your range without spaces using only
+the minus(-) sign. This parameter is optional. If this parameter is used it must be complete (pass a parameter after the = sign).</p> <h2>Instructions on configuring ZoomCat plugin</h2> <p>To
+configure this plugin you must go to <strong>Mambots -&gt; Site Mambots</strong> and click on &quot;<strong>ZoomCat</strong>&quot; (or click on the checkbox next to &quot;ZoomCat&quot; and hit
+the &quot;Edit&quot; button on the top left menu in Joomla.</p> <h3>Plugin parameters:</h3> <p><strong>Pop-up width:</strong><br /> For this option to be of any significance you need to have
+&quot;PopUp Media&quot; set to &quot;yes&quot; (drop down menu) in Zoom Media Gallery -&gt; Settings (menu) -&gt; Layout (tab). This parameter will control the width of the pop-up browser
+window that opens in the users browser every time they click on a gallery image.</p> <p><strong>Pop-up height:</strong><br /> For this option to be of any significance you need to have
+&quot;PopUp Media&quot; set to &quot;yes&quot; (drop down menu) in Zoom Media Gallery -&gt; Settings (menu) -&gt; Layout (tab). This parameter will control the height of the pop-up browser
+window that opens in the users browser every time they click on a gallery image.</p> <p><strong>Thumbs per row:</strong><br /> Set this parameter to the amount of thumbnails you want to have in
+each gallery row. It is set to a default of 3 per row. The amount of thumbnails per row and the size of each thumbnail will have to be noted to create a successful CSS for your gallery. If you
+change the amount of rows your .ZMthumb style will have to change to a percentage that works with the amount of thumbs you selected (2 - 50% for thumbs, 4 - 25% for thumbs, etc). </p>
+<p><strong>Use plugin CSS:</strong><br /> If the radio button is set to yes the CSS defined in this plugin will be used on every page you call this plugin in your content. If you set this to
+&quot;no&quot; the CSS on this page will not appear in your content when this plugin is called and any styles you wish to implement will have to be defined in your template CSS file. </p>
+<p><strong>CSS:</strong><br /> Here you can define the style of your ZoomCat gallery using CSS. Clicking the button below will reset the CSS in this plugin parameter to the original CSS that
+was given at the time of installing this plugin.<span class="error"> Any changes you have made to the CSS parameter will be lost. </span>This button will also nicely format the CSS in the CSS
+parameter. </p> <p> <input name="originalcss" type="button" onClick="cleanupcss()" value="Reset Orignal Plugin CSS" /> </p> <p>Here is a visual breakdown of what the ZoomCat plugin will produce
+for styles when creating a gallery. You can control most all aspects of the plugin gallery via CSS. </p> </span> <div id="ZoomCat"> <p><strong>&lt;div id = &quot;ZoomCat&quot;&gt;</strong><br
+/> Surrounds the whole gallery. This may contain a suffix if you pass one in the plugin tag (example: &lt;div id=&quot;ZoomCatSuffix&quot;&gt;). </p> <h2>&lt;h2&gt; Category Title appear here.
+&lt;/h2&gt; </h2> <p class="ZMCatSize"><strong>&lt;p class = &quot;ZMCatSize&quot;&gt; </strong><br /> Surrounds the call out for how much media is in the gallery (Example: &quot;58 Media
+found&quot;. This can be turned off in the<span class="ZMImgHits"> Zoom Gallery component settings.</span></p> <p class="ZMCatDesc"><strong>&lt;p class = &quot;ZMCatDesc&quot;&gt;</strong><br
+/> Surrounds the description of your Zoom Category.</p> <span class="ZMThumbRow"> <p><strong>&lt;span class = &quot;ZMThumbRow&quot;&gt;</strong><br /> Surrounds each Thumbnail row (like a
+table tr tag). Needs to be relative and float to hold the Thumbnails in place. </p> <span class="ZMThumb"><strong>&lt;span class = &quot;ZMThumb&quot;&gt;</strong><br /> Surrounds each
+Thumbnail. You can get at the img tag via the CSS <strong><em>.ZMThumb img</em></strong>. You can set the &quot;a&quot; tag behaviors via <em><strong>.ZMThumb a</strong></em> &amp;
+<em><strong>.ZMThumb a:hover</strong></em>. </p> Needs to float left or right. <p class="ZMImgCaption"><strong>&lt;p class = &quot;ZMImgCaption&quot;&gt;</strong><br /> Surrounds the thumbnail
+caption. </p> <p class="ZMImgHits"><strong>&lt;p class = &quot;ZMImgHits&quot;&gt;</strong><br /> Surrounds the image hits. Image hit display can be turned off in the Zoom Gallery component
+settings. </p> </span> <span class="ZMThumb"><strong>&lt;span class = &quot;ZMThumb&quot;&gt;</strong><br /> Surrounds each Thumbnail. You can get at the img tag via the CSS
+<strong><em>.ZMThumb img</em></strong>. You can set the a tag behaviors via <em><strong>.ZMThumb a</strong></em> &amp; <em><strong>.ZMThumb a:hover</strong></em>. </p> Needs to float left or
+right. <p class="ZMImgCaption"><strong>&lt;p class = &quot;ZMImgCaption&quot;&gt;</strong><br /> Surrounds the thumbnail caption. </p> <p class="ZMImgHits"><strong>&lt;p class =
+&quot;ZMImgHits&quot;&gt;</strong><br /> Surrounds the image hits. Image hit display can be turned off in the Zoom Gallery settings. </p> </span><span class="ZMThumb"><strong>&lt;span class =
+&quot;ZMThumb ZMThumbLast&quot;&gt;</strong><br /> Surrounds each Thumbnail. Every last thumbnail in a row will also have the style <i>ZMThumbLast</i> added to it so you can treat its padding
+differently. You can get at the img tag via the CSS <strong><em>.ZMThumb img</em></strong>. You can set the a tag behaviors via <em><strong>.ZMThumb a</strong></em> &amp; <em><strong>.ZMThumb
+a:hover</strong></em>. </p> Needs to float left or right. <p class="ZMImgCaption"><strong>&lt;p class = &quot;ZMImgCaption&quot;&gt;</strong><br /> Surrounds the thumbnail caption. </p> <p
+class="ZMImgHits"><strong>&lt;p class = &quot;ZMImgHits&quot;&gt;</strong><br /> Surrounds the image hits. Image hit display can be turned off in the Zoom Gallery settings. </p> </span> </span>
+</div> </span>]]>
+	</description>
+	<files>
+		<filename mambot="zOOmCat">zOOmCat.php</filename>
+	</files>
+	<params>
+		<param name="popupwidth" type="text" default="600" label="Pop-up width" 
+			description="If you have zOOm Gallery set to use pop-ups this is where you can control the pop-ups width." />
+		<param name="popupheight" type="text" default="600" label="Pop-up height" 
+			description="If you have zOOm Gallery set to use pop-ups this is where you can control the pop-ups height." />
+		<param name="perrow" type="text" default="3" label="Thumbs per row" 
+			description="The number of thumbnails you want to appear in each gallery row." />
+		<param name="usezmcss" type="radio" default="1" label="Use plugin CSS" 
+			description="Do you want to use the CSS located in this plugin. You could put your CSS into your template file to create custom template based gallery styles. If you select yes, the css in the box below will appear in your HTML source whenever a zoom category is called with zoomcat.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="zoomcatstyles" type="textarea" cols="40" rows="40" label="CSS" 
+			description="The number of thumbnails you want to appear in each gallery row." default='#ZoomCat { position: relative; width: 100%; text-align: center; float: left; padding: 10px; } #ZoomCat h2 { font-size: 18px; line-height: 19px; margin: 0px; padding: 0px; text-align: center; color: #006699; } p.ZMCatSize { text-align: center; margin: 0px; } p.ZMCatDesc { text-align: center; font-size: 13px; line-height: 14px; margin-top: 2px; margin-bottom: 7px; } .ZMThumbRow { text-align: center; position: relative; width: 100%; padding: 0px 0px 10px; margin: auto; float: left; } .ZMThumb { float: left; width: 30%; text-align: center; padding: 1px 5px 1px 1px; } .ZMThumbLast { margin-right: 0px !important; } .ZMThumb img { border: 1px solid #666666; } .ZMThumb a { text-decoration: none; color: #333333; } .ZMThumb a:hover { color: #990000; } .ZMThumb p.ZMImgCaption { width: 100%; margin-top: 2px; margin-bottom: 5px; } .ZMThumb p.ZMImgHits { font-size: 11px; line-height: 12px; margin: 0px; } .ZMThumb img a:hover { border-top-color: #990000; border-right-color: #990000; border-bottom-color: #990000; border-left-color: #990000; }' />
+	</params>
+</mosinstall>
